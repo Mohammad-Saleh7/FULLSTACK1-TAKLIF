@@ -6,18 +6,22 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Container from "react-bootstrap/Container";
 
 function NavBar() {
+  const today = new Date();
+  const date = today.toLocaleDateString();
+
   return (
     <Container>
       <Navbar
         className="bg-body-tertiary px-4 nav-up"
         style={{ height: "70px", borderBottom: "1px solid #ddd" }}
       >
-        <Form className="d-flex justify-content-center ">
+        <Form className="d-flex w-100 form">
           <Form.Control
             type="text"
-            placeholder="Search"
+            placeholder="Search Task"
             className="me-2 search"
           />
+          <p>{date}</p>
           <Button type="submit" className="btn-nav">
             Add new task
           </Button>
