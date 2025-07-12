@@ -9,6 +9,8 @@ import Col from "react-bootstrap/esm/Col";
 
 function SideBar() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showIcon, setShowIcon] = useState(null);
+
   const getLinkClass = ({ isActive }) =>
     `navLink text-decoration-none text-dark mb-2 ${
       isActive ? "active-link" : ""
@@ -80,17 +82,33 @@ function SideBar() {
               as={NavLink}
               to="/secondary"
               onClick={(e) => e.stopPropagation()}
-              className={useActivePath("/secondary")}
+              className={`icons-side    ${useActivePath("/secondary")}`}
+              onMouseEnter={() => setShowIcon("secondary")}
+              onMouseLeave={() => setShowIcon(null)}
             >
-              secondary
+              <span>secondary</span>
+              {showIcon === "secondary" && (
+                <div className="d-flex gap-1">
+                  <i class="bi bi-pencil-square"></i>
+                  <i class="bi bi-trash"></i>
+                </div>
+              )}
             </Dropdown.Item>
             <Dropdown.Item
               as={NavLink}
               to={"/main"}
               onClick={(e) => e.stopPropagation()}
-              className={useActivePath("/main")}
+              className={`icons-side    ${useActivePath("/main")}`}
+              onMouseEnter={() => setShowIcon("main")}
+              onMouseLeave={() => setShowIcon(null)}
             >
-              Main
+              <span>Main</span>
+              {showIcon === "main" && (
+                <div className="d-flex gap-1">
+                  <i class="bi bi-pencil-square"></i>
+                  <i class="bi bi-trash"></i>
+                </div>
+              )}
             </Dropdown.Item>
             <Dropdown.Item
               as={NavLink}

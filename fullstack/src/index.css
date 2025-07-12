@@ -159,3 +159,8 @@ body {
   color: rgb(2, 89, 89) !important;
   transition: 0.5s;
 }
+
+.icons-side{
+  display: flex;
+  justify-content: space-between;
+}
