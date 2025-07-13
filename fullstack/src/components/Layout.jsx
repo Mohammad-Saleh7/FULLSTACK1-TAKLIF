@@ -1,4 +1,3 @@
-// src/components/Layout.jsx
 import React from "react";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
@@ -6,9 +5,9 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="d-flex">
       <SideBar />
-      <div style={{ marginLeft: "250px" }}>
+      <div className="main-content">
         <NavBar />
         <div className="p-4">
           <Outlet />
